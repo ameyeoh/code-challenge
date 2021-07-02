@@ -1,17 +1,17 @@
-import { expect } from '@jest/globals';
-import passwordExposed from 'src/pages/api/password_exposed';
-import { mockRequest } from 'test/utils';
+import { expect } from "@jest/globals";
+import passwordExposed from "src/pages/api/password_exposed";
+import { mockRequest } from "test/utils";
 
 /**
  * You won't need to change anything in this file.
  * Use it as a reference for how to write tests for the "/api/create_new_account" endpoint.
  */
-describe('/api/password_exposed', () => {
-  test('returns true for exposed password', async () => {
+describe("/api/password_exposed", () => {
+  test("returns true for exposed password", async () => {
     const { req, res } = mockRequest({
-      method: 'POST',
+      method: "POST",
       body: {
-        password: 'weakpass',
+        password: "weakpass",
       },
     });
 
@@ -23,11 +23,11 @@ describe('/api/password_exposed', () => {
     });
   });
 
-  test('returns false for non-exposed password', async () => {
+  test("returns false for non-exposed password", async () => {
     const { req, res } = mockRequest({
-      method: 'POST',
+      method: "POST",
       body: {
-        password: 'others',
+        password: "others",
       },
     });
 
